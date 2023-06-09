@@ -1,0 +1,35 @@
+﻿@model List<RGRv5.Models.Tests.TestSummaryViewModel>
+
+<h2>Изменить тест</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Количество вопросов</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @foreach(var test in Model)
+    {
+        <form method="post" action="@Url.Action("DeleteTest", "Web", new { id = test.Id })">
+            <tr>
+                <td>@test.Id</td>
+                <td>@test.Title</td>
+                <td>@test.QuestionCount</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Web", new { id = test.Id })" class="btn btn-primary">Изменить</a>
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                </td>
+                @Html.AntiForgeryToken()
+                
+            </tr>
+        </form>
+    }
+    </tbody>
+</table>
+<p><a href="@Url.Action("Create", "Web")" class="btn btn-primary">Создать новый тест</a></p>

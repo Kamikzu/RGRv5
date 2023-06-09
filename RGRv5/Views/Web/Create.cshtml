@@ -1,0 +1,58 @@
+﻿@model RGRv5.Models.Tests.TestViewModel
+
+<h1>Создание нового теста</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title">Название:</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <hr />
+
+    @for (int i = 0; i < 10; i++)
+    {
+        <div class="form-group">
+            <label>Вопрос @(i + 1):</label>
+            <input type="text" asp-for="@Model.Questions[i].Question" class="form-control"/>
+            <span asp-validation-for="@Model.Questions[i].Question" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Ответ 1:</label>
+            <input type="text" asp-for="@Model.Questions[i].Answer1" class="form-control"/>
+            <span asp-validation-for="@Model.Questions[i].Answer1" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Ответ 2:</label>
+            <input type="text" asp-for="@Model.Questions[i].Answer2" class="form-control"/>
+            <span asp-validation-for="@Model.Questions[i].Answer2" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Ответ 3:</label>
+            <input type="text" asp-for="@Model.Questions[i].Answer3" class="form-control"/>
+            <span asp-validation-for="@Model.Questions[i].Answer3" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Ответ 4:</label>
+            <input type="text" asp-for="@Model.Questions[i].Answer4" class="form-control"/>
+            <span asp-validation-for="@Model.Questions[i].Answer4" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Правильный ответ:</label>
+            <select asp-for="@Model.Questions[i].CorrectAnswerIndex" class="form-control">
+                <option value="1">Ответ 1</option>
+                <option value="2">Ответ 2</option>
+                <option value="3">Ответ 3</option>
+                <option value="4">Ответ 4</option>
+            </select>
+            <span asp-validation-for="@Model.Questions[i].CorrectAnswerIndex" class="text-danger"></span>
+        </div>
+    }
+    <button type="submit" class="btn btn-primary">Создать тест</button>
+</form>

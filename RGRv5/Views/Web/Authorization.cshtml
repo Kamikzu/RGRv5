@@ -1,0 +1,21 @@
+﻿@model RGRv5.Models.StartModel.Authorization
+
+@{
+    ViewBag.Title = "Authorization";
+    Layout = null;
+}
+
+<h1>Авторизация</h1>
+<form method="post" asp-controller="Web">
+
+    <label asp-for="Login"></label>
+    <input asp-for="Login" />
+    <span asp-validation-for="Login"></span>
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+
+    <button asp-action="Authoriz" class="btn btn-primary">Авторизоваться</button>
+    <button asp-action="Registration" class="btn btn-danger">Перейти к регистрации</button>
+</form>

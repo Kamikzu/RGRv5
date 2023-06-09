@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Select";
+    Layout = null;
+}
+
+<h1>Стартовое окно</h1>
+<h2>Для начала работы вам нужно войти на сайт или проивзвести регистрацию!</h2>
+<form method="post" asp-controller="Web">
+    <input type="submit" value="Авторизоваться" asp-action="GoToAuthorization"/>
+    <input type="submit" value="Зарегистрироваться" asp-action="GoToRegistration"/>
+</form>

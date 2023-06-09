@@ -1,0 +1,63 @@
+﻿@if (Model != null)
+{
+    <h2>@Model.Title</h2>
+
+    <button id="start-test-button">Начать тест</button>
+
+    <form asp-controller="Web" asp-action="SaveAnswers" method="post" style="display: none;">
+        <input type="hidden" name="testId" value="@Model.Id" />
+        @if (Model.Questions != null)
+        {
+            @for (int i = 0; i < Model.Questions.Count; i++)
+            {
+                if (Model.Questions[i] == null)
+                {
+                    continue;
+                }
+
+                <h3>@Model.Questions[i].Question</h3>
+                @if (Model.Questions[i].Answers != null)
+                {
+                    @for (int j = 0; j < Model.Questions[i].Answers.Count; j++)
+                    {
+                        if (Model.Questions[i].Answers[j] == null)
+                        {
+                            continue;
+                        }
+
+                        <label>
+                            <input type="radio" name="answerIndexes[@i]" value="@j" />
+                            @Model.Questions[i].Answers[j]
+                        </label>
+                        <br />
+                    }
+                }
+            }
+
+            <button type="submit" id="submit-answers-button">Отправить ответы</button>
+        }
+    </form>
+
+    <script>
+        var startTime;
+
+        document.getElementById("start-test-button").addEventListener("click", function() {
+            startTime = new Date();
+            document.getElementById("start-test-button").style.display = "none";
+            document.querySelector("form").style.display = "block";
+        });
+
+        document.getElementById("submit-answers-button").addEventListener("click", function() {
+            var endTime = new Date();
+            var timeDiff = endTime - startTime;
+            var seconds = Math.floor(timeDiff / 1000);
+            var minutes = Math.floor(seconds / 60);
+            var hours = Math.floor(minutes / 60);
+            var timeSpentInput = document.createElement("input");
+            timeSpentInput.setAttribute("type", "hidden");
+            timeSpentInput.setAttribute("name", "timeSpent");
+            timeSpentInput.setAttribute("value", hours + ":" + (minutes % 60) + ":" + (seconds % 60));
+            document.querySelector("form").appendChild(timeSpentInput);
+        });
+    </script>
+}

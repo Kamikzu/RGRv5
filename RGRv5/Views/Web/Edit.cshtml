@@ -1,0 +1,94 @@
+﻿@model RGRv5.Models.Tests.TestViewModel
+
+<h2>Изменение теста</h2>
+
+@using (Html.BeginForm("Edit", "Web"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title)
+        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Title)
+    </div>
+
+    <h3>Вопросы</h3>
+    
+    <table class="table table-striped" id="questions-table">
+        <thead>
+            <tr>
+                <th>Вопрос</th>
+                <th>Ответ 1</th>
+                <th>Ответ 2</th>
+                <th>Ответ 3</th>
+                <th>Ответ 4</th>
+                <th>Правильный ответ</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var i = 0; i < Model.Questions.Count; i++)
+            {
+                var question = Model.Questions[i];
+
+                <tr>
+                    <td>@Html.TextBoxFor(model => model.Questions[i].Question, new { @class = "form-control" })</td>
+                    <td>@Html.TextBoxFor(model => model.Questions[i].Answer1, new { @class = "form-control" })</td>
+                    <td>@Html.TextBoxFor(model => model.Questions[i].Answer2, new { @class = "form-control" })</td>
+                    <td>@Html.TextBoxFor(model => model.Questions[i].Answer3, new { @class = "form-control" })</td>
+                    <td>@Html.TextBoxFor(model => model.Questions[i].Answer4, new { @class = "form-control" })</td>
+                    <td>@Html.DropDownListFor(model => model.Questions[i].CorrectAnswerIndex, new SelectList(new List<SelectListItem>
+                        {
+                            new SelectListItem { Text = "Answer 1", Value = "1" },
+                            new SelectListItem { Text = "Answer 2", Value = "2" },
+                            new SelectListItem { Text = "Answer 3", Value = "3" },
+                            new SelectListItem { Text = "Answer 4", Value = "4" }
+                        }, "Value", "Text"), "- Select -", new { @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.HiddenFor(model => model.Questions[i].Id)
+                            <button type="button" class="btn btn-danger" onclick="deleteQuestion(this)">Удалить</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary" onclick="addQuestion()">Добавить вопрос</button>
+
+    <br /><br />
+    <input type="submit" value="Сохранить" class="btn btn-primary" />
+}
+
+@section scripts {
+    <script>
+        function deleteQuestion(button) {
+            var row = button.closest("tr");
+            var questionId = row.querySelector("[name$='.Id']").value;
+
+            $.ajax({
+                url: "/Web/DeleteQuestion/" + questionId,
+                type: "POST",
+                success: function () {
+                    row.remove();
+                },
+                error: function (xhr, status, error) {
+                    alert("Error deleting question: " + error);
+                }
+            });
+        }
+
+        function addQuestion() {
+            $.ajax({
+                url: "/Web/AddQuestion",
+                type: "POST",
+                success: function (html) {
+                    $("#questions-table tbody").append(html);
+                },
+                error: function (xhr, status, error) {
+                    alert("Error adding question: " + error);
+                }
+            });
+        }
+    </script>
+}

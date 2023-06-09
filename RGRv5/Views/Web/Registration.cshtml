@@ -1,0 +1,28 @@
+﻿@model RGRv5.Models.StartModel.Registration
+
+@{
+    ViewBag.Title = "Registraion";
+    Layout = null;
+}
+
+<h1>Регистрация</h1>
+<form method="post" asp-controller="Web">
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName" />
+    <span asp-validation-for="FirstName"></span>
+
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" />
+    <span asp-validation-for="LastName"></span>
+
+    <label asp-for="Login"></label>
+    <input asp-for="Login" />
+    <span asp-validation-for="Login"></span>
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+
+    <button asp-action="Register" class="btn btn-primary">Зарегистрироваться</button>
+    <button asp-action="Authorization" class="btn btn-danger">Перейти к авторизации</button>
+</form>

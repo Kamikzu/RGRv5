@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RGRv5
+build_property.RootNamespace = RGRv5
+build_property.ProjectDir = C:\Users\mkhae\Source\Repos\RGRv52\RGRv5\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\mkhae\Source\Repos\RGRv52\RGRv5
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Authorization.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXEF1dGhvcml6YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Shared/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Results.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXFJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/TakeTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXFRha2VUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Web/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mkhae/Source/Repos/RGRv52/RGRv5/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pgjkgfbhln

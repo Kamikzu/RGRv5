@@ -1,0 +1,34 @@
+﻿<h2>Результаты теста</h2>
+
+<p>Вы набрали @ViewBag.TotalScore баллов из @ViewBag.MaxScore.</p>
+<p>Время прохождения: @ViewBag.TotalTime</p>
+
+<table>
+<tr>
+    <th>Вопрос </th>
+    <th>Пользовательский ответ </th>
+    <th>Правильный ответ </th>
+    <th>Баллов за ответ </th>
+</tr>
+
+@for (int i = 0; i < ViewBag.UserAnswers.Count; i++)
+{
+    int userAnswerIndex = ViewBag.UserAnswers[i];
+    int correctAnswerIndex = ViewBag.CorrectAnswerIndexes[i];
+
+    <tr>
+        <td>@(i + 1)</td>
+        <td>@(userAnswerIndex + 1)</td>
+        <td>@(correctAnswerIndex + 1)</td>
+        @if (userAnswerIndex == correctAnswerIndex)
+        {
+            <td>10</td>
+        }
+        else
+        {
+            <td>0</td>
+        }
+    
+    </tr>
+    }
+    </table>

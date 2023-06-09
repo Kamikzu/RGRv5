@@ -1,0 +1,12 @@
+﻿@model List<RGRv5.Models.Tests.Test>
+
+<h2>Доступные тесты</h2>
+
+<ul>
+    @foreach(var test in Model)
+    {
+        <li>
+            <a href="@Url.Action("TakeTest", "Web", new { id = test.Id })">@test.Title</a>
+        </li>
+    }
+</ul>

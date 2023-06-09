@@ -1,0 +1,18 @@
+﻿@model dynamic
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@{
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Домашняя страница</h1>
+    <h2>Выберите действие</h2>
+    <form method="post" asp-controller="Web">
+        <input type="submit" value="Пройти тест" asp-action="GoToTests" />
+        @if (@Accessor.HttpContext.Session.GetString("_role") == "1")
+        {
+            <input type="submit" value="Редактирование тестов" asp-action="GoToUpdateTests" />
+        }
+    </form>
+</div>
